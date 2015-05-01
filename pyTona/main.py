@@ -21,7 +21,7 @@ class Interface(object):
         self.question_answers = {
             'What is feet in miles': QA('What is feet in miles', feet_to_miles),
             'How many seconds since': QA('How many seconds since', '42 seconds'),
-            'Who invented Python': QA('Who invented Python', 'Guido Rossum(BDFL)'),
+            'Who invented Python': QA('Who invented Python', 'Guido Rossum(BFDL)'),
             'Why don\'t you understand me': QA('Why don\'t you understand me', 'Because you do not speak 1s and 0s'),
             'Why don\'t you shutdown': QA('Why don\'t you shutdown', hal_20),
             'Where am I': QA('Where am I', get_git_branch),
@@ -42,11 +42,13 @@ class Interface(object):
             parsed_question = ""
             args = []
             for keyword in question[:-1].split(' '):
+                #print 'keyword=',keyword
                 try:
                     args.append(float(keyword))
                 except:
                     parsed_question += "{0} ".format(keyword)
-            parsed_question = parsed_question[0:-2]
+                    #print 'parsed_question=',parsed_question
+            parsed_question = parsed_question[0:-1]
             self.last_question = parsed_question
             for answer in self.question_answers.values():
                 if difflib.SequenceMatcher(a=answer.question, b=parsed_question).ratio() >= .90:
@@ -61,6 +63,7 @@ class Interface(object):
                 return UNKNOWN_QUESTION
 
     def teach(self, answer=""):
+        print 'self.last_question=',self.last_question
         if self.last_question is None:
             return NO_QUESTION
         elif self.last_question in self.question_answers.keys():

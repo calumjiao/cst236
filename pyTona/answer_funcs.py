@@ -71,6 +71,7 @@ def get_fibonacci_seq(index):
     if seq_finder is None:
         
         seq_finder = FibSeqFinder()
+        print(seq_finder.sequence)
         seq_finder.start()
 
     if index > len(seq_finder.sequence):

@@ -1,5 +1,3 @@
-**Acceptable Answers**
-
 #0001 The system shall accept questions in the form of strings and attempt to answer them
 
 #0002 The system shall answer questions that begin with one of the following valid question keywords: "How", "What", "Where", "Why" and "Who"
@@ -7,10 +5,6 @@
 #0003 If the system does not detect a valid question keyword it shall return "Was that a question?"
 
 #0004 If the system does not detect a question mark at end of the string it shall return "Was that a question?"
-
-A question mark is defined as ascii value 0x3F
-
-**Determining Answers**
 
 #0005 The system shall break a question down into words separated by space
 
@@ -22,8 +16,6 @@ A question mark is defined as ascii value 0x3F
 
 #0009 When no valid match is determined the system shall return "I don't know, please provide the answer"
 
-**Providing Answers**
-
 #0010 The system shall provide a means of providing an answer to the previously asked question.
 
 #0011 The system shall accept and store answers to previous questions in the form of a string or a function pointer and store it as the generator function.
@@ -32,15 +24,11 @@ A question mark is defined as ascii value 0x3F
 
 #0013 If an attempt is made to provide an answer to an already answered question the system shall respond with "I don\'t know about that. I was taught differently" and not update the question
 
-**Correcting Answers**
-
 #0014 The system shall provide a means of updating an answer to the previously asked question.
 
 #0015 The system shall accept and store answers to previous questions in the form of a string or a function pointer and store it as the generator function.
 
 #0016 If no previous question has been asked the system shall respond with "Please ask a question first"
-
-**Initial Answers Provided**
 
 #0017 The system shall respond to the question "What is <float> feet in miles" with the the float value divided by 5280 and append "miles" to the end of  the return.
 
@@ -49,8 +37,6 @@ A question mark is defined as ascii value 0x3F
 #0020 The system shall respond to the question "Why don't you understand me" with "Because you do not speak 1s and 0s"
 
 #0021 The system shall respond to the question "Why don't you shutdown" with "I'm afraid I can't do that <username>"
-
-Username shall be determined by the name of the currently logged in user.
 
 #0022 The system shall respond to the question "Where am I" with the local git branch name or "unknown" if it can't be determined
 
