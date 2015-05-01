@@ -249,43 +249,43 @@ class TestPyTona(TestCase):
         self.assertTrue(isinstance(answer,str))
         self.assertEqual(answer, "I'm afraid I can't do that {0}".format(getpass.getuser()) )   
 
-    #0022 The system shall respond to the question "Where am I" with the local git branch name or "unknown" if it can't be determined 
-    @requirements(['#0022','#0022'])        
-    def test_0022_where_am_I(self):
-        dream = Interface()
-        question = "Where am I?"
-        answer = dream.ask(question)
-        self.assertTrue(isinstance(answer,str))
-        if answer=="unknown":
-            self.assertTrue(1)
-        else:
-            self.assertEqual(answer, get_git_branch())       
+    # #0022 The system shall respond to the question "Where am I" with the local git branch name or "unknown" if it can't be determined 
+    # @requirements(['#0022','#0022'])        
+    # def test_0022_where_am_I(self):
+    #     dream = Interface()
+    #     question = "Where am I?"
+    #     answer = dream.ask(question)
+    #     self.assertTrue(isinstance(answer,str))
+    #     if answer=="unknown":
+    #         self.assertTrue(1)
+    #     else:
+    #         self.assertEqual(answer, get_git_branch())       
 
-    #0023 The system shall respond to the question "Where are you" with the URL for the git repo or "unknown" if it can't be determined             
-    @requirements(['#0023','#0023'])        
-    def test_0023_where_are_you(self):
-        dream = Interface()
-        question = "Where are you?"
-        answer = dream.ask(question)
-        self.assertTrue(isinstance(answer,str))
-        if answer=="unknown":
-            self.assertTrue(1)
-        else:
-            self.assertEqual(answer, get_git_url())   
+    # #0023 The system shall respond to the question "Where are you" with the URL for the git repo or "unknown" if it can't be determined             
+    # @requirements(['#0023','#0023'])        
+    # def test_0023_where_are_you(self):
+    #     dream = Interface()
+    #     question = "Where are you?"
+    #     answer = dream.ask(question)
+    #     self.assertTrue(isinstance(answer,str))
+    #     if answer=="unknown":
+    #         self.assertTrue(1)
+    #     else:
+    #         self.assertEqual(answer, get_git_url())   
 
-    #0024 The system shall respond to the question "Who else is here" with a list of users             
-    @requirements(['#0024','#0024'])        
-    def test_0024_who_else_is_here(self):
-        dream = Interface()
-        question = "Who else is here?"
-        answer = dream.ask(question)
-        self.assertIsInstance(answer,list)
+    # #0024 The system shall respond to the question "Who else is here" with a list of users             
+    # @requirements(['#0024','#0024'])        
+    # def test_0024_who_else_is_here(self):
+    #     dream = Interface()
+    #     question = "Who else is here?"
+    #     answer = dream.ask(question)
+    #     self.assertIsInstance(answer,list)
 
-    #0025 When determining users the system shall connect to the server at ip address 192.168.64.3 port 1337 and sending a message "Who?"            
-    @requirements(['#0025','#0025'])        
-    def test_0025_able_determining_user(self):
-        self.assertTrue(hasattr('answer_funcs', 'get_other_users'))     
-        self.assertTrue(inspect.isfunction(answer_funcs.get_other_users))         
+    # #0025 When determining users the system shall connect to the server at ip address 192.168.64.3 port 1337 and sending a message "Who?"            
+    # @requirements(['#0025','#0025'])        
+    # def test_0025_able_determining_user(self):
+    #     self.assertTrue(hasattr('answer_funcs', 'get_other_users'))     
+    #     self.assertTrue(inspect.isfunction(answer_funcs.get_other_users))         
 
     #0026 If a response is received from the server the user list shall be parsed from a "$" seperated list of users            
     @requirements(['#0026','#0026'])        
@@ -346,15 +346,15 @@ class TestPyTona(TestCase):
             pass
           
 
-    #0031 The system shall respond to the question "Where are you" with "Unknown" if it can't be determined             
-    @requirements(['#0031','#0031'])        
-    def test_0031_where_are_you_Unknown(self):
-        dream = Interface()
-        question = "Where are you?"
-        answer = dream.ask(question)
-        self.assertTrue(isinstance(answer,str))
-        if answer=="Unknown":
-            pass
+    # #0031 The system shall respond to the question "Where are you" with "Unknown" if it can't be determined             
+    # @requirements(['#0031','#0031'])        
+    # def test_0031_where_are_you_Unknown(self):
+    #     dream = Interface()
+    #     question = "Where are you?"
+    #     answer = dream.ask(question)
+    #     self.assertTrue(isinstance(answer,str))
+    #     if answer=="Unknown":
+    #         pass
                   
     #0032 The system shall stop the Fibonacci sequence if asked                  
     @requirements(['#0032','#0032'])        
