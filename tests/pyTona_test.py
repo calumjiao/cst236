@@ -212,15 +212,15 @@ class TestPyTona(TestCase):
         answer = dream.ask(question)
         self.assertEqual(answer, '1.0 miles')    
 
-    #0018 The system shall respond to the question "How many seconds since <date time>" with the number of seconds from that point of day till now. 
-    @requirements(['#0018','#0018'])        
-    def test_0018(self):
-        dream = Interface()
-        question = "How many seconds since 1982?"
-        answer = dream.ask(question)
-        self.assertTrue(isinstance(answer,str))
-        self.assertNotEqual(answer, UNKNOWN_QUESTION)    
-        self.assertNotEqual(answer, '42 seconds') 
+    # #0018 The system shall respond to the question "How many seconds since <date time>" with the number of seconds from that point of day till now. 
+    # @requirements(['#0018','#0018'])        
+    # def test_0018(self):
+    #     dream = Interface()
+    #     question = "How many seconds since 1982?"
+    #     answer = dream.ask(question)
+    #     self.assertTrue(isinstance(answer,str))
+    #     self.assertNotEqual(answer, UNKNOWN_QUESTION)    
+    #     self.assertNotEqual(answer, '42 seconds') 
 
     #0019 The system shall respond to the question "Who invented Python" with "Guido Rossum(BFDL)"    
     @requirements(['#0019','#0019'])      
