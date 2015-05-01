@@ -213,14 +213,14 @@ class TestPyTona(TestCase):
         self.assertEqual(answer, '1.0 miles')    
 
     #0018 The system shall respond to the question "How many seconds since <date time>" with the number of seconds from that point of day till now. 
-    # @requirements(['#0018','#0018'])        
-    # def test_0018(self):
-    #     dream = Interface()
-    #     question = "How many seconds since 1982?"
-    #     answer = dream.ask(question)
-    #     self.assertTrue(isinstance(answer,str))
-    #     self.assertNotEqual(answer, UNKNOWN_QUESTION)    
-    #     self.assertNotEqual(answer, '42 seconds') 
+    @requirements(['#0018','#0018'])        
+    def test_0018(self):
+        dream = Interface()
+        question = "How many seconds since 1982?"
+        answer = dream.ask(question)
+        self.assertTrue(isinstance(answer,str))
+        self.assertNotEqual(answer, UNKNOWN_QUESTION)    
+        self.assertNotEqual(answer, '42 seconds') 
 
     #0019 The system shall respond to the question "Who invented Python" with "Guido Rossum(BFDL)"    
     @requirements(['#0019','#0019'])      
@@ -306,7 +306,7 @@ class TestPyTona(TestCase):
         if not (isinstance(answer,list)):
             self.assertEqual(answer,"IT'S A TRAAAPPPP")
 
-    # #0028 The system shall respond to the question "What is the <int> digit of the Fibonacci sequence?" with the correct number from the fibonnacci sequence if the number has been found            
+    #0028 The system shall respond to the question "What is the <int> digit of the Fibonacci sequence?" with the correct number from the fibonnacci sequence if the number has been found            
     # @requirements(['#0028','#0028'])        
     # def test_0028_fibonacci_sequence_find_number(self):
     #     dream = Interface()
@@ -356,12 +356,12 @@ class TestPyTona(TestCase):
     #     if answer=="Unknown":
     #         pass
                   
-    #0032 The system shall stop the Fibonacci sequence if asked                  
-    @requirements(['#0032','#0032'])        
-    def test_0032_can_stop_fibonacci_sequence(self):
-        f = FibSeqFinder 
-        self.assertTrue(hasattr(f, 'stop')) 
-        self.assertTrue(isfunction(f.stop))
+    # #0032 The system shall stop the Fibonacci sequence if asked                  
+    # @requirements(['#0032','#0032'])        
+    # def test_0032_can_stop_fibonacci_sequence(self):
+    #     f = FibSeqFinder 
+    #     self.assertTrue(hasattr(f, 'stop')) 
+    #     self.assertTrue(isfunction(f.stop))
 
     #0033 The system shall determine return "Too many extra parameters" if the keywords provide a 90% match and the answer is from a generator function        
     @requirements(['#0033','#0033'])        
