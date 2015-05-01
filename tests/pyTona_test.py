@@ -169,7 +169,7 @@ class TestPyTona(TestCase):
         dream = Interface()
         question = "Why don't you understand me?"
         answer = dream.ask(question)
-        print answer
+        print (answer)
         newAnswer = "This is an unacceptable answer"
         teach_result = dream.teach(newAnswer)   
         self.assertEqual(teach_result, NO_TEACH)   
@@ -371,6 +371,6 @@ class TestPyTona(TestCase):
         #self.assertRaises(Exception, dream.ask(question))   
         try:
             answer=dream.ask(question)
-            print answer
+            print (answer)
         except Exception as e:
             self.assertEqual(e.args, "Too many extra parameterss")
