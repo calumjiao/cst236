@@ -3,7 +3,7 @@ Test for pyTona
 """
 from pyTona.question_answer import *
 from unittest import TestCase
-from ReqTracer import requirements
+from tests.ReqTracer import requirements
 from pyTona.main import *
 import re
 import getpass
