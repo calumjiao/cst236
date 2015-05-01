@@ -63,7 +63,7 @@ class Interface(object):
                 return UNKNOWN_QUESTION
 
     def teach(self, answer=""):
-        print 'self.last_question=',self.last_question
+        #print 'self.last_question=',self.last_question
         if self.last_question is None:
             return NO_QUESTION
         elif self.last_question in self.question_answers.keys():
