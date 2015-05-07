@@ -1,7 +1,7 @@
 import logging
 import os
 
-from ReqTracer import *
+#from ReqTracer import *
 from nose2.events import Plugin
 
 log = logging.getLogger('nose2.plugins.traceability')
