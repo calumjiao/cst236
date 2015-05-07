@@ -122,7 +122,7 @@ def get_fibonacci_seq_list(index):
         return seq_finder.sequence[:index]        
 
 def write_to_file():
-    my_list = [i**2 for i in range(1,1)]
+    my_list = [i**2 for i in range(1,11)]
     try:
         f = open("output.txt", "a")
 
@@ -134,6 +134,15 @@ def write_to_file():
     except:
         return 'IO Error'
 
+def read_from_file():
+    try:
+        with open('output.txt') as f:
+            content = f.readlines()
+        logging.debug(content) 
+        return 'Successfully write to file!'
+    except:
+        return 'IO Error'        
+
 # seq_finder = FibSeqFinder(name='Main')
 # seq_finder.start()
 # time.sleep(0.6)
@@ -143,4 +152,5 @@ def write_to_file():
 # logging.debug(get_fibonacci_seq(3))
 
 #print get_fibonacci_seq_list(20)
-write_to_file()
+#write_to_file()
+read_from_file()

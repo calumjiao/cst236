@@ -1,6 +1,6 @@
 from pyTona.question_answer import QA
 from pyTona.answer_funcs import feet_to_miles, hal_20, get_git_branch, get_git_url, get_other_users, get_fibonacci_seq
-from pyTona.answer_funcs import get_fibonacci_seq_list, write_to_file
+from pyTona.answer_funcs import get_fibonacci_seq_list, write_to_file, read_from_file
 # from question_answer import QA
 # from answer_funcs import feet_to_miles, hal_20, get_git_branch, get_git_url, get_other_users, get_fibonacci_seq
 
@@ -35,7 +35,8 @@ class Interface(object):
             'Who else is here': QA('Who else is here', get_other_users),
             'What is the digit of the Fibonacci sequence': QA('What is the digit of the Fibonacci sequence', get_fibonacci_seq),
             'What is the first numbers of the Fibonacci sequence': QA('What is the first numbers of the Fibonacci sequence', get_fibonacci_seq_list),
-            'How about write to a file': QA('How about write to a file', write_to_file)
+            'How about write to a file': QA('How about write to a file', write_to_file),
+            'How about read from a file': QA('How about read from a file', read_from_file)
         }
         self.last_question = None
 

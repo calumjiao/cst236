@@ -134,4 +134,12 @@ def write_to_file():
     except:
         return 'IO Error'
 
+def read_from_file():
+    try:
+        with open('output.txt') as f:
+            content = f.readlines()
+        return 'Successfully write to file!'
+    except:
+        return 'IO Error'          
+
 #print get_fibonacci_seq(3)

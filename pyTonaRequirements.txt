@@ -84,3 +84,5 @@ Username shall be determined by the name of the currently logged in user.
 
 #0036 The system shall able to write to a file
 
+#0037 The system shall able to read from a file
+
