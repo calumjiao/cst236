@@ -558,16 +558,16 @@ class TestPyTona(TestCase):
     #     self.assertTrue(time_end - time_start < 60)       
 
     #0036 The system shall able to write to a file     
-    # @requirements(['#0036','#0036'])        
-    # def test_0036_write_to_file(self):
-    #     question = "How about write to a file?"
-    #     answer = self.dream.ask(question)
-    #     self.assertEqual(answer,'Successfully write to file!')         
+    @requirements(['#0036','#0036'])        
+    def test_0036_write_to_file(self):
+        question = "How about write to a file?"
+        answer = self.dream.ask(question)
+        self.assertEqual(answer,'Successfully write to file!')         
 
     #0037 The system shall able to read from a file     
     @requirements(['#0037','#0037'])        
     def test_0037_write_to_file(self):
         question = "How about read from a file?"
-        self.dream.ask = Mock(return_value='Successfully write to file!')
+        #self.dream.ask = Mock(return_value='Successfully write to file!')
         answer = self.dream.ask(question)
         self.assertEqual(answer,'Successfully write to file!')                
