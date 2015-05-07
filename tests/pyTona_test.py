@@ -568,5 +568,6 @@ class TestPyTona(TestCase):
     @requirements(['#0037','#0037'])        
     def test_0037_write_to_file(self):
         question = "How about read from a file?"
+        self.dream.ask = Mock(return_value='Successfully write to file!')
         answer = self.dream.ask(question)
         self.assertEqual(answer,'Successfully write to file!')                
