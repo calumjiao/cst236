@@ -4,13 +4,13 @@ import socket
 import subprocess
 import threading
 import time
-
-import logging
 from time import strftime
+import logging
 
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(levelname)s] (%(threadName)-10s) %(message)s',
                     )
+
 seq_finder = None
 
 def feet_to_miles(feet):
@@ -73,16 +73,16 @@ class FibSeqFinder(threading.Thread):
         while not self._stop.isSet() and self.num_indexes <= 1000:
             self.sequence.append(self.sequence[-1] + self.sequence[-2])
             self.num_indexes += 1
-            #print str(self.num_indexes), self._stop.isSet(),
+            logging.debug( 'num_indexes=' + str(self.num_indexes))
             time.sleep(.04)
 
 def get_fibonacci_seq(index):
     index = int(index)
     global seq_finder
-    #print seq_finder
+    logging.debug(seq_finder)
     if seq_finder is None:
         
-        seq_finder = FibSeqFinder(name='inner')
+        seq_finder = FibSeqFinder(name='inner thread')
         seq_finder.start()
 
     logging.debug('passed in index='+str(index))
@@ -119,10 +119,10 @@ def get_fibonacci_seq_list(index):
         else:
             return "cool your jets"
     else:
-        return seq_finder.sequence[:index] 
+        return seq_finder.sequence[:index]        
 
 def write_to_file():
-    my_list = [i**2 for i in range(random.randint(1,11))]
+    my_list = [i**2 for i in range(1,1)]
     try:
         f = open("output.txt", "a")
 
@@ -134,4 +134,13 @@ def write_to_file():
     except:
         return 'IO Error'
 
-#print get_fibonacci_seq(3)
+# seq_finder = FibSeqFinder(name='Main')
+# seq_finder.start()
+# time.sleep(0.6)
+# # logging.debug(get_fibonacci_seq(3))
+# # time.sleep(0.6)
+# logging.debug('seq_finder.num_indexes='+ str(seq_finder.num_indexes))
+# logging.debug(get_fibonacci_seq(3))
+
+#print get_fibonacci_seq_list(20)
+write_to_file()

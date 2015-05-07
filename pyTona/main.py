@@ -1,7 +1,13 @@
 from pyTona.question_answer import QA
 from pyTona.answer_funcs import feet_to_miles, hal_20, get_git_branch, get_git_url, get_other_users, get_fibonacci_seq
+from pyTona.answer_funcs import get_fibonacci_seq_list, write_to_file
+# from question_answer import QA
+# from answer_funcs import feet_to_miles, hal_20, get_git_branch, get_git_url, get_other_users, get_fibonacci_seq
 
 import difflib
+import random
+import string
+
 NOT_A_QUESTION_RETURN = "Was that a question?"
 UNKNOWN_QUESTION = "I don't know, please provide the answer"
 NO_QUESTION = 'Please ask a question first'
@@ -27,7 +33,9 @@ class Interface(object):
             'Where am I': QA('Where am I', get_git_branch),
             'Where are you': QA('Where are you', get_git_url),
             'Who else is here': QA('Who else is here', get_other_users),
-            'What is the digit of the Fibonacci sequence': QA('What is the digit of the Fibonacci sequence', get_fibonacci_seq)
+            'What is the digit of the Fibonacci sequence': QA('What is the digit of the Fibonacci sequence', get_fibonacci_seq),
+            'What is the first numbers of the Fibonacci sequence': QA('What is the first numbers of the Fibonacci sequence', get_fibonacci_seq_list),
+            'How about write to a file': QA('How about write to a file', write_to_file)
         }
         self.last_question = None
 
@@ -76,3 +84,14 @@ class Interface(object):
 
     def __add_answer(self, answer):
         self.question_answers[self.last_question] = QA(self.last_question, answer)
+
+
+# dream = Interface()
+# MAXSIZE = 100
+# current_size = len(dream.question_answers)
+# for i in range(MAXSIZE-current_size):
+#     random_string = ''.join(random.choice(string.ascii_lowercase) for _ in range(20))
+#     dream.question_answers['How about question ' + str(i + current_size)] = 'The answer is ' + str(i + current_size) 
+# for item in dream.question_answers.items():
+#     print item   
+# print dream.ask('How about question 20?')     
